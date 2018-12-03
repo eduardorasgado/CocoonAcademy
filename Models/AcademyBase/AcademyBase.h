@@ -21,7 +21,7 @@ namespace Models
                 // generating new id
                 Id = IdCreator;
             }
-            ~AcademyBase() { } // Destructor
+            ~AcademyBase() { } // Destructo
 
             // setters and getters
             int getId()
