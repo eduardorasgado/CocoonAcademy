@@ -13,12 +13,14 @@ int AcademyBase::IdCreator = 0;
 
 void testingAcademyModel();
 
-int main() {
+int main()
+{
     testingAcademyModel();
     return 0;
 }
 
-void testingAcademyModel() {
+void testingAcademyModel()
+{
     // creating some instances of academy model
     auto listAcademy = std::vector<std::shared_ptr<Academy>>();
 

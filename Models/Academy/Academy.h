@@ -7,8 +7,10 @@
 
 namespace Models
 {
-    class Academy : public AcademyBase
+    class Academy : private AcademyBase
     {
+        public:
+            int getId();
 
     };
 }

@@ -3,3 +3,10 @@
 //
 
 #include "Academy.h"
+
+namespace Models
+{
+    int Academy::getId() {
+        return Id;
+    }
+}
