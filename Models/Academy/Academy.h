@@ -3,10 +3,12 @@
 //
 #pragma once
 
+#include "../AcademyBase/AcademyBase.h"
+
 namespace Models
 {
-    class Academy {
-        public:
+    class Academy : public AcademyBase
+    {
 
     };
 }
