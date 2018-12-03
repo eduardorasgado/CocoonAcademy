@@ -14,7 +14,7 @@ using namespace Models;
 using namespace Testers;
 
 // initializing IdTracker for all objects inherits base
-int AcademyBase::IdCreator = 0;
+int AcademyBase::IdCreator{0};
 
 int main()
 {

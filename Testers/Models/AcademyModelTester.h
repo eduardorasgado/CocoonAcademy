@@ -18,17 +18,20 @@ namespace Testers
                 // creating some instances of academy model
                 auto listAcademy = std::vector<std::shared_ptr<Academy>>();
 
+                // academy names
+                std::string AcademyNames[] = {"A", "B", "C", "D", "E", "F",
+                                              "G", "H", "I", "J"};
                 // adding data to list
                 for (int i = 0; i < 10; ++i) {
                     //auto a = new Academy();
-                    auto a = std::make_shared<Academy>();
+                    auto a = std::make_shared<Academy>(AcademyNames[i]);
 
                     listAcademy.push_back(a);
                 }
 
                 // read the id of all the elements inside the list
                 for (auto e : listAcademy) {
-                    std::cout << e->getId() << std::endl;
+                    std::cout << e->getId() << " => " << e->getName() << std::endl;
                 }
             }
 

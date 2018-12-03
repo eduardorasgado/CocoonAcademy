@@ -1,2 +1,2 @@
 # CocoonAcademy
-C++ implementation of an academy architecture using MVC and Data Storage.
+Modern C++ implementation of an online academy architecture using MVC design pattern, Data Storage and Unit Testing.

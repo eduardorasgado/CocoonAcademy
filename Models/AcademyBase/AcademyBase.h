@@ -10,10 +10,11 @@ namespace Models
 {
     class AcademyBase
     {
-        public:
+        private:
             std::string Name;
-            static int IdCreator;
             int Id{0};
+        public:
+            static int IdCreator;
 
             AcademyBase()
             {
@@ -27,6 +28,14 @@ namespace Models
             int getId()
             {
                 return this->Id;
+            }
+            std::string getName()
+            {
+                return Name;
+            }
+            void setName(std::string Name)
+            {
+                this->Name = Name;
             }
     };
 }
