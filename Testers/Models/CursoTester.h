@@ -15,12 +15,17 @@ namespace Testers
                 std::cout << "[CURSO MODEL TEST]" << std::endl;
                 //
                 try {
+
+
+                    auto academyVector = AcademyTester::createAcademyVector();
+
                     auto cursosTest = std::vector<std::shared_ptr<Curso>>();
 
                     for (int i = 0; i < 6; ++i) {
                         //
                         std::string name = "Curso de programacion";
                         auto c = std::make_shared<Curso>(name);
+                        c->setAcademy(academyVector[3]);
                         cursosTest.push_back(c);
                     }
 

@@ -18,20 +18,7 @@ namespace Testers
                 std::cout << "[ACADEMY MODEL TEST]" << std::endl;
                 try
                 {
-                    // creating some instances of academy model
-                    auto listAcademy = std::vector<std::shared_ptr<Academy>>();
-
-                    // academy names
-                    std::string AcademyNames[] = {"A", "B", "C", "D", "E", "F",
-                                                  "G", "H", "I", "J"};
-                    // adding data to list
-                    for (int i = 0; i < 10; ++i) {
-                        //auto a = new Academy();
-                        auto a = std::make_shared<Academy>(AcademyNames[i]);
-                        a->setAcademyType(TiposEscuelas::Online);
-                        a->setAddress("Av Republica #22 Col. Roma");
-                        listAcademy.push_back(a);
-                    }
+                    auto listAcademy = createAcademyVector();
 
                     // read the id of all the elements inside the list
                     for (auto e : listAcademy) {
@@ -46,6 +33,26 @@ namespace Testers
                 }
                 std::cout << "[o] AcademyModel Test passed. " << std::endl;
                 return true;
+            }
+
+            static std::vector<std::shared_ptr<Academy>> createAcademyVector()
+            {
+                // creating some instances of academy model
+                auto listAcademy = std::vector<std::shared_ptr<Academy>>();
+
+                // academy names
+                std::string AcademyNames[] = {"A", "B", "C", "D", "E", "F",
+                                              "G", "H", "I", "J"};
+                // adding data to list
+                for (int i = 0; i < 10; ++i) {
+                    //auto a = new Academy();
+                    auto a = std::make_shared<Academy>(AcademyNames[i]);
+                    a->setAcademyType(TiposEscuelas::Online);
+                    a->setAddress("Av Republica #22 Col. Roma");
+                    listAcademy.push_back(a);
+                }
+
+                return listAcademy;
             }
 
         private:
