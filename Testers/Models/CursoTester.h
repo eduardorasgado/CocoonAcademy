@@ -10,27 +10,14 @@ namespace Testers
     class CursoTester
     {
         public:
-            static bool testingCurso()
+            static bool testingCursoModel()
             {
                 std::cout << "[CURSO MODEL TEST]" << std::endl;
                 //
                 try {
 
 
-                    auto academyVector = AcademyTester::createAcademyVector();
-
-                    auto cursosTest = std::vector<std::shared_ptr<Curso>>();
-
-                    std::string names[] = {"Programación Básica", "Arquitectura de Software",
-                                           "Matemáticas Discretas", "Sistemas Operativos",
-                                           "Xamarin Forms", "C++ TDD"};
-                    for (int i = 0; i < 6; ++i) {
-                        auto c = std::make_shared<Curso>(names[i]);
-                        c->setAcademy(academyVector[i]);
-                        c->setAcademyId(academyVector[i]->getId());
-                        c->setJornada(TiposJornadas::Weekend);
-                        cursosTest.push_back(c);
-                    }
+                    auto cursosTest = createCursosVector();
 
                     for(auto& e : cursosTest)
                     {
@@ -48,6 +35,25 @@ namespace Testers
                 std::cout << "[o]: Curso Model Test passed. " << std::endl;
                 return true;
             }
+
+            static std::vector<std::shared_ptr<Curso>> createCursosVector()
+            {
+                auto academyVector = AcademyTester::createAcademyVector();
+
+                auto cursosTest = std::vector<std::shared_ptr<Curso>>();
+
+                std::string names[] = {"101", "201","301", "401", "501", "601"};
+                for (int i = 0; i < 6; ++i) {
+                    auto c = std::make_shared<Curso>(names[i]);
+                    c->setAcademy(academyVector[i]);
+                    c->setAcademyId(academyVector[i]->getId());
+                    c->setJornada(TiposJornadas::Weekend);
+                    cursosTest.push_back(c);
+                }
+
+                return cursosTest;
+            }
+
         private:
             CursoTester() { } // disallow instance creation
     };

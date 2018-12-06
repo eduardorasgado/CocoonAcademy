@@ -4,6 +4,7 @@
 
 #include "Models/AcademyModelTester.h"
 #include "Models/CursoTester.h"
+#include "Models/AsignaturaTester.h"
 
 namespace Testers
 {
@@ -16,7 +17,9 @@ namespace Testers
 
                 if (Testers::AcademyTester::testingAcademyModel()) ++totalPassed;
                 std::cout << std::endl;
-                if (Testers::CursoTester::testingCurso()) ++totalPassed;
+                if (Testers::CursoTester::testingCursoModel()) ++totalPassed;
+                std::cout << std::endl;
+                if(Testers::AsignaturaTester::testingAsignaturaModel()) ++totalPassed;
                 std::cout << std::endl;
 
                 std::cout << "[RESULTS]:" << totalPassed << " tests passed" << std::endl;

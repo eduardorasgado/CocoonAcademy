@@ -7,6 +7,7 @@
 #include "Models/Academy/Academy.h"
 #include "Models/AcademyBase/AcademyBase.h"
 #include "Models/Curso/Curso.h"
+#include "Models/Asignatura/Asignatura.h"
 
 #include "Testers/executeTesting.h"
 
