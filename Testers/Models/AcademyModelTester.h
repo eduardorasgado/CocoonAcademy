@@ -25,13 +25,15 @@ namespace Testers
                 for (int i = 0; i < 10; ++i) {
                     //auto a = new Academy();
                     auto a = std::make_shared<Academy>(AcademyNames[i]);
-
+                    a->setAcademyType(TiposEscuelas::Online);
+                    a->setAddress("Av Republica #22 Col. Roma");
                     listAcademy.push_back(a);
                 }
 
                 // read the id of all the elements inside the list
                 for (auto e : listAcademy) {
-                    std::cout << e->getId() << " => " << e->getName() << std::endl;
+                    std::cout << e->getId() << " => " << e->getName();
+                    std::cout << " | " << e->getAcademyType() << " | " << e->getAddress() << std::endl;
                 }
             }
 
