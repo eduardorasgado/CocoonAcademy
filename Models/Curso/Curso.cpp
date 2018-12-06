@@ -29,6 +29,11 @@ namespace Models
         return AcademyId;
     }
 
+    TiposJornadas const & Curso::getJornada() const
+    {
+        return Jornada;
+    }
+
     void Curso::setAddress(std::string Address) {
         this->Address = Address;
     }
@@ -45,5 +50,9 @@ namespace Models
     void Curso::setAcademyId(int academyId)
     {
         this->AcademyId = academyId;
+    }
+
+    void Curso::setJornada(TiposJornadas Jornada) {
+        this->Jornada = Jornada;
     }
 }

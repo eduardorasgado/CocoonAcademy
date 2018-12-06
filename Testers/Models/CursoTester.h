@@ -28,6 +28,7 @@ namespace Testers
                         auto c = std::make_shared<Curso>(names[i]);
                         c->setAcademy(academyVector[i]);
                         c->setAcademyId(academyVector[i]->getId());
+                        c->setJornada(TiposJornadas::Weekend);
                         cursosTest.push_back(c);
                     }
 
@@ -35,7 +36,8 @@ namespace Testers
                     {
                         std::cout << e->getId() << " => " << e->getName();
                         std::cout << " | Academy: " << e->getAcademy()->getName();
-                        std::cout << " | " << e->getAcademy()->getId() << std::endl;
+                        std::cout << " | " << e->getAcademy()->getId();
+                        std::cout << " | Tipo de jornada: " << e->getJornada() << std::endl;
                     }
 
                 } catch (std::exception& e)
