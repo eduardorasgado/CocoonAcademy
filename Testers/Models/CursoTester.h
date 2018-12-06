@@ -3,6 +3,8 @@
 //
 #pragma  once
 
+#include "AsignaturaTester.h"
+
 using namespace Models;
 
 namespace Testers
@@ -24,7 +26,13 @@ namespace Testers
                         std::cout << e->getId() << " => " << e->getName();
                         std::cout << " | Academy: " << e->getAcademy()->getName();
                         std::cout << " | " << e->getAcademy()->getId();
-                        std::cout << " | Tipo de jornada: " << e->getJornada() << std::endl;
+                        std::cout << " | Tipo de jornada: " << e->getJornada();
+                        std::cout << "| Asignaturas: ";
+                        for(auto& a : e->getAsignaturas())
+                        {
+                            std::cout << a->getName() << ", ";
+                        }
+                        std::cout << std::endl;
                     }
 
                 } catch (std::exception& e)
@@ -48,6 +56,13 @@ namespace Testers
                     c->setAcademy(academyVector[i]);
                     c->setAcademyId(academyVector[i]->getId());
                     c->setJornada(TiposJornadas::Weekend);
+                    // adding asignaturas from Asignaturas Tester
+                    auto asignaturas = Testers::AsignaturaTester::createAsignaturasVector();
+                    for(auto& a : asignaturas)
+                    {
+                        c->setAsignaturas(a);
+                    }
+
                     cursosTest.push_back(c);
                 }
 

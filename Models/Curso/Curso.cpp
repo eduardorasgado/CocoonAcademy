@@ -34,6 +34,11 @@ namespace Models
         return Jornada;
     }
 
+    std::vector<std::shared_ptr<Asignatura>> const & Curso::getAsignaturas() const
+    {
+        return Asignaturas;
+    }
+
     void Curso::setAddress(std::string Address) {
         this->Address = Address;
     }
@@ -54,5 +59,10 @@ namespace Models
 
     void Curso::setJornada(TiposJornadas Jornada) {
         this->Jornada = Jornada;
+    }
+
+    void Curso::setAsignaturas(std::shared_ptr<Models::Asignatura> a)
+    {
+        Asignaturas.push_back(a);
     }
 }
