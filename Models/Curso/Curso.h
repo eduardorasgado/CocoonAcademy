@@ -4,16 +4,32 @@
 
 #pragma once
 
+#include <cstdlib>
+#include <memory>
+
 #include "../AcademyBase/AcademyBase.h"
+#include "../Academy/Academy.h"
 
 namespace Models
 {
-    class Curso : AcademyBase
+    class Curso : private AcademyBase
     {
+            std::string Address;
+            std::shared_ptr<Academy> AcademyOwner;
+            std::string AcademyId;
+
         public:
             Curso(std::string Name) : AcademyBase()
             {
                 this->setName(Name);
             }
+            ~Curso();
+
+            // setters and getters
+            std::string getAddress() const;
+            std::shared_ptr<Academy> getAcademy() const;
+
+            void setAddress(std::string);
+            void setAcademy(std::shared_ptr<Academy>);
     };
 }

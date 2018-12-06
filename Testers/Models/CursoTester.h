@@ -3,6 +3,8 @@
 //
 #pragma  once
 
+using namespace Models;
+
 namespace Testers
 {
     class CursoTester
@@ -13,6 +15,9 @@ namespace Testers
                 //
                 try {
                     //
+                    std::string name = "Curso de programacion";
+                    auto c = std::make_shared<Curso>(name);
+
                 } catch (std::exception& e)
                 {
                     std::cout << "[x]: Curso Model Test failed. " << std::endl;
