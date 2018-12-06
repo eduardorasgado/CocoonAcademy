@@ -13,28 +13,38 @@ namespace Testers
     class AcademyTester
     {
         public:
-            static void testingAcademyModel()
+            static bool testingAcademyModel()
             {
-                // creating some instances of academy model
-                auto listAcademy = std::vector<std::shared_ptr<Academy>>();
+                try
+                {
+                    // creating some instances of academy model
+                    auto listAcademy = std::vector<std::shared_ptr<Academy>>();
 
-                // academy names
-                std::string AcademyNames[] = {"A", "B", "C", "D", "E", "F",
-                                              "G", "H", "I", "J"};
-                // adding data to list
-                for (int i = 0; i < 10; ++i) {
-                    //auto a = new Academy();
-                    auto a = std::make_shared<Academy>(AcademyNames[i]);
-                    a->setAcademyType(TiposEscuelas::Online);
-                    a->setAddress("Av Republica #22 Col. Roma");
-                    listAcademy.push_back(a);
-                }
+                    // academy names
+                    std::string AcademyNames[] = {"A", "B", "C", "D", "E", "F",
+                                                  "G", "H", "I", "J"};
+                    // adding data to list
+                    for (int i = 0; i < 10; ++i) {
+                        //auto a = new Academy();
+                        auto a = std::make_shared<Academy>(AcademyNames[i]);
+                        a->setAcademyType(TiposEscuelas::Online);
+                        a->setAddress("Av Republica #22 Col. Roma");
+                        listAcademy.push_back(a);
+                    }
 
-                // read the id of all the elements inside the list
-                for (auto e : listAcademy) {
-                    std::cout << e->getId() << " => " << e->getName();
-                    std::cout << " | " << e->getAcademyType() << " | " << e->getAddress() << std::endl;
+                    // read the id of all the elements inside the list
+                    for (auto e : listAcademy) {
+                        std::cout << e->getId() << " => " << e->getName();
+                        std::cout << " | " << e->getAcademyType() << " | " << e->getAddress() << std::endl;
+                    }
+
+                } catch(std::exception& e)
+                {
+                    std::cout << "[x] AcademyModel Test failed. " << std::endl;
+                    return false;
                 }
+                std::cout << "[o] AcademyModel Test passed. " << std::endl;
+                return true;
             }
 
         private:

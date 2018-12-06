@@ -7,11 +7,10 @@
 #include "Models/Academy/Academy.h"
 #include "Models/AcademyBase/AcademyBase.h"
 
-// testing
-#include "Testers/Models/AcademyModelTester.h"
+#include "Testers/executeTesting.h"
 
+// testing
 using namespace Models;
-using namespace Testers;
 
 // initializing IdTracker for all objects inherits base
 int AcademyBase::IdCreator{0};
@@ -19,7 +18,8 @@ int AcademyBase::IdCreator{0};
 int main()
 {
     // applying testing for all models created
-    AcademyTester::testingAcademyModel();
+    Testers::GlobalTester::GlobalModelTesting();
+
 
     return 0;
 }
