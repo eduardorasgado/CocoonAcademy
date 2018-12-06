@@ -26,9 +26,12 @@ namespace Models
             ~Curso();
 
             // setters and getters
+            int getId() const;
+            std::string getName() const;
             std::string getAddress() const;
             std::shared_ptr<Academy> getAcademy() const;
 
+            void setName(std::string);
             void setAddress(std::string);
             void setAcademy(std::shared_ptr<Academy>);
     };

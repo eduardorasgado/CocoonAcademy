@@ -15,6 +15,7 @@ namespace Testers
         public:
             static bool testingAcademyModel()
             {
+                std::cout << "[ACADEMY MODEL TEST]" << std::endl;
                 try
                 {
                     // creating some instances of academy model

@@ -15,7 +15,9 @@ namespace Testers
                 int totalPassed = 0;
 
                 if (Testers::AcademyTester::testingAcademyModel()) ++totalPassed;
+                std::cout << std::endl;
                 if (Testers::CursoTester::testingCurso()) ++totalPassed;
+                std::cout << std::endl;
 
                 std::cout << "[RESULTS]:" << totalPassed << " tests passed" << std::endl;
             }

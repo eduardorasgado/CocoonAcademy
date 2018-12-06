@@ -12,11 +12,23 @@ namespace Testers
         public:
             static bool testingCurso()
             {
+                std::cout << "[CURSO MODEL TEST]" << std::endl;
                 //
                 try {
-                    //
-                    std::string name = "Curso de programacion";
-                    auto c = std::make_shared<Curso>(name);
+                    auto cursosTest = std::vector<std::shared_ptr<Curso>>();
+
+                    for (int i = 0; i < 6; ++i) {
+                        //
+                        std::string name = "Curso de programacion";
+                        auto c = std::make_shared<Curso>(name);
+                        cursosTest.push_back(c);
+                    }
+
+
+                    for(auto& e : cursosTest)
+                    {
+                        std::cout << e->getId() << " => " << e->getName() << std::endl;
+                    }
 
                 } catch (std::exception& e)
                 {

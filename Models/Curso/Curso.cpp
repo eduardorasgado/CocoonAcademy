@@ -8,6 +8,14 @@ namespace Models
 {
     Curso::~Curso() { }
 
+    int Curso::getId() const {
+        return AcademyBase::getId();
+    }
+
+    std::string Curso::getName() const {
+        return AcademyBase::getName();
+    }
+
     std::string Curso::getAddress() const {
         return Address;
     }
@@ -24,5 +32,9 @@ namespace Models
         this->AcademyOwner = nullptr; // delete actual pointer
         // create a copy
         this->AcademyOwner = AcademyOwner;
+    }
+
+    void Curso::setName(std::string Name) {
+        AcademyBase::setName(Name);
     }
 }
