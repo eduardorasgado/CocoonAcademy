@@ -16,6 +16,11 @@ namespace Testers
                 std::cout << "[ASIGNATURA MODEL TEST]" << std::endl;
                 try {
                     auto allAsignaturas = createAsignaturasVector();
+                    // showing data from list
+                    for(auto& a : allAsignaturas)
+                    {
+                        std::cout << a->getId() << " => " << a->getName() << std::endl;
+                    }
 
                 } catch(std::exception& e)
                 {
