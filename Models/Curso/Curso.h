@@ -16,7 +16,7 @@ namespace Models
     {
             std::string Address;
             std::shared_ptr<Academy> AcademyOwner;
-            std::string AcademyId;
+            int AcademyId;
 
         public:
             Curso(std::string Name) : AcademyBase()
@@ -26,13 +26,15 @@ namespace Models
             ~Curso();
 
             // setters and getters
-            int getId() const;
-            std::string getName() const;
-            std::string getAddress() const;
+            int const & getId() const;
+            std::string const & getName() const;
+            std::string const & getAddress() const;
             std::shared_ptr<Academy> getAcademy() const;
+            int const & getAcademyId() const;
 
             void setName(std::string);
             void setAddress(std::string);
             void setAcademy(std::shared_ptr<Academy>);
+            void setAcademyId(int);
     };
 }

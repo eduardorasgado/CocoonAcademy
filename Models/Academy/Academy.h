@@ -26,13 +26,13 @@ namespace Models
                 this->setName(Name);
             }
             // setters and getters
-            int getId() const;
-            std::string getName() const;
-            int getCreationYear() const;
-            std::string getCountry() const;
-            std::string getCity() const;
-            std::string getAddress() const;
-            TiposEscuelas getAcademyType() const;
+            int const & getId() const;
+            std::string const & getName() const;
+            int const & getCreationYear() const;
+            std::string const & getCountry() const;
+            std::string const & getCity() const;
+            std::string const & getAddress() const;
+            TiposEscuelas const & getAcademyType() const;
 
             void setName(std::string);
             void setCountry(std::string);

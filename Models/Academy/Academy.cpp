@@ -6,44 +6,44 @@
 
 namespace Models
 {
-    int Academy::getId() const
+    int const & Academy::getId() const
     {
         return AcademyBase::getId();
     }
 
-    std::string Academy::getName() const
+    std::string const & Academy::getName() const
     {
         return AcademyBase::getName();
+    }
+
+    int const & Academy::getCreationYear() const
+    {
+        return CreationYear;
+    }
+
+    std::string const & Academy::getCountry() const
+    {
+        return Country;
+    }
+
+    std::string const & Academy::getCity() const
+    {
+        return City;
+    }
+
+    std::string const & Academy::getAddress() const
+    {
+        return Address;
+    }
+
+    TiposEscuelas const & Academy::getAcademyType() const
+    {
+        return AcademyType;
     }
 
     void Academy::setName(std::string Name)
     {
         AcademyBase::setName(Name);
-    }
-
-    int Academy::getCreationYear() const
-    {
-        return CreationYear;
-    }
-
-    std::string Academy::getCountry() const
-    {
-        return Country;
-    }
-
-    std::string Academy::getCity() const
-    {
-        return City;
-    }
-
-    std::string Academy::getAddress() const
-    {
-        return Address;
-    }
-
-    TiposEscuelas Academy::getAcademyType() const
-    {
-        return AcademyType;
     }
 
     void Academy::setCountry(std::string Country)

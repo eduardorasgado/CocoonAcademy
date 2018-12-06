@@ -21,18 +21,21 @@ namespace Testers
 
                     auto cursosTest = std::vector<std::shared_ptr<Curso>>();
 
+                    std::string names[] = {"Programación Básica", "Arquitectura de Software",
+                                           "Matemáticas Discretas", "Sistemas Operativos",
+                                           "Xamarin Forms", "C++ TDD"};
                     for (int i = 0; i < 6; ++i) {
-                        //
-                        std::string name = "Curso de programacion";
-                        auto c = std::make_shared<Curso>(name);
-                        c->setAcademy(academyVector[3]);
+                        auto c = std::make_shared<Curso>(names[i]);
+                        c->setAcademy(academyVector[i]);
+                        c->setAcademyId(academyVector[i]->getId());
                         cursosTest.push_back(c);
                     }
 
-
                     for(auto& e : cursosTest)
                     {
-                        std::cout << e->getId() << " => " << e->getName() << std::endl;
+                        std::cout << e->getId() << " => " << e->getName();
+                        std::cout << " | Academy: " << e->getAcademy()->getName();
+                        std::cout << " | " << e->getAcademy()->getId() << std::endl;
                     }
 
                 } catch (std::exception& e)

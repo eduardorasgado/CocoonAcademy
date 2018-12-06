@@ -25,11 +25,11 @@ namespace Models
             ~AcademyBase() { } // Destructo
 
             // setters and getters
-            int getId() const
+            int const & getId() const
             {
                 return this->Id;
             }
-            std::string getName() const
+            std::string const & getName() const
             {
                 return Name;
             }

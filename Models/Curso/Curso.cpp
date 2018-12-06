@@ -8,20 +8,25 @@ namespace Models
 {
     Curso::~Curso() { }
 
-    int Curso::getId() const {
+    int const & Curso::getId() const {
         return AcademyBase::getId();
     }
 
-    std::string Curso::getName() const {
+    std::string const & Curso::getName() const {
         return AcademyBase::getName();
     }
 
-    std::string Curso::getAddress() const {
+    std::string const & Curso::getAddress() const {
         return Address;
     }
 
     std::shared_ptr<Academy> Curso::getAcademy() const {
         return AcademyOwner;
+    }
+
+    int const & Curso::getAcademyId() const
+    {
+        return AcademyId;
     }
 
     void Curso::setAddress(std::string Address) {
@@ -36,5 +41,9 @@ namespace Models
 
     void Curso::setName(std::string Name) {
         AcademyBase::setName(Name);
+    }
+    void Curso::setAcademyId(int academyId)
+    {
+        this->AcademyId = academyId;
     }
 }

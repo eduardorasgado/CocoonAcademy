@@ -23,7 +23,7 @@ namespace Testers
                     // read the id of all the elements inside the list
                     for (auto e : listAcademy) {
                         std::cout << e->getId() << " => " << e->getName();
-                        std::cout << " | " << e->getAcademyType() << " | " << e->getAddress() << std::endl;
+                        std::cout << " | tipo: " << e->getAcademyType() << " | " << e->getAddress() << std::endl;
                     }
 
                 } catch(std::exception& e)
@@ -41,11 +41,11 @@ namespace Testers
                 auto listAcademy = std::vector<std::shared_ptr<Academy>>();
 
                 // academy names
-                std::string AcademyNames[] = {"A", "B", "C", "D", "E", "F",
-                                              "G", "H", "I", "J"};
+                std::string AcademyNames[] = {"A academy", "B academy", "C academy", "D academy",
+                                              "E academy", "F academy", "G academy", "H academy",
+                                              "I academy", "J academy"};
                 // adding data to list
                 for (int i = 0; i < 10; ++i) {
-                    //auto a = new Academy();
                     auto a = std::make_shared<Academy>(AcademyNames[i]);
                     a->setAcademyType(TiposEscuelas::Online);
                     a->setAddress("Av Republica #22 Col. Roma");
