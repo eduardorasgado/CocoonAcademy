@@ -17,6 +17,7 @@ namespace Models
         private:
             int CursoId;
             std::shared_ptr<Curso> CursoOwner;
+            // TODO: Create Evaluacion List and setters/getters
         public:
             Alumno(std::string Name) : AcademyBase()
             {

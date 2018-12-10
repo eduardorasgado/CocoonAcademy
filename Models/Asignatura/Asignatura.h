@@ -19,6 +19,9 @@ namespace Models
         private:
             // Asignatura is owned by
             int CursoId;
+            // TODO: Create Evaluacion List and setters/getters
+
+            // owner
             std::shared_ptr<Curso> CursoOwner;
 
         public:

@@ -14,7 +14,7 @@ namespace Testers
     class AlumnoTester
     {
         public:
-            static bool testingAlumnoModelTester()
+            static bool testingAlumnoModel()
             {
                 // a seed for random generator
                 std::srand (unsigned (std::time(0)));
