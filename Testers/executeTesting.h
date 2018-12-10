@@ -22,6 +22,8 @@ namespace Testers
                 std::cout << std::endl;
                 if(Testers::AsignaturaTester::testingAsignaturaModel()) ++totalPassed;
                 std::cout << std::endl;
+                if(Testers::AlumnoTester::testingAlumnoModelTester()) ++totalPassed;
+                std::cout << std::endl;
 
                 std::cout << "[RESULTS]:" << totalPassed << " tests passed" << std::endl;
             }
