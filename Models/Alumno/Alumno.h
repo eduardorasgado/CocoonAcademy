@@ -21,5 +21,13 @@ namespace Models
             }
 
             // setters and getters
+            int const & getId() const;
+            std::string const & getName();
+            int const & getCursoId() const;
+            std::shared_ptr<Curso> const & getCurso() const;
+
+            void setName(std::string);
+            void setCursoId(int);
+            void setCurso(std::shared_ptr<Curso>);
     };
 }
