@@ -16,7 +16,7 @@ namespace Testers
                 try {
                     auto alumnos = createAlumnoVector();
 
-                } catch (std::exception e)
+                } catch (std::exception& e)
                 {
                     std::cout << "[x]: Alumno Model Test Failed." << std::endl;
                     return false;
@@ -30,16 +30,16 @@ namespace Testers
                 auto alumnosList = std::vector<std::shared_ptr<Alumno>>();
                 auto alumnosNames = createNames();
 
-                for (int i = 0; i < 20; ++i) {
-                    std::cout << "alumno: " << alumnosNames[i] << std::endl;
+                for (auto& alumno : alumnosNames) {
+                    std::cout << "alumno: " << alumno << std::endl;
                 }
                 return alumnosList;
             }
 
             static std::vector<std::string> createNames()
             {
-                std::string names[] = {"Eduardo", "Lorenzo", "Martin", "Joaquin"};
-                std::string lastNames[] = {"Martinez", "Rasgado", "Sanchez", "Aquino"};
+                std::string names[] = {"Eduardo", "Lorenzo", "Martin", "Joaquin", "Juan"};
+                std::string lastNames[] = {"Martinez", "Rasgado", "Sanchez", "Aquino", "Smith"};
 
                 auto listNames = std::vector<std::string>();
 

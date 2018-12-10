@@ -16,7 +16,7 @@ namespace Models
     {
         private:
             int CursoId;
-            std::shared_ptr<class Curso> CursoOwner;
+            std::shared_ptr<Curso> CursoOwner;
         public:
             Alumno(std::string Name) : AcademyBase()
             {

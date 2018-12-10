@@ -11,15 +11,13 @@
 #include "../AcademyBase/AcademyBase.h"
 #include "../Academy/Academy.h"
 #include "../TiposJornadas.h"
-#include "../Asignatura/Asignatura.h"
-
-
 
 namespace Models
 {
     // to avoid problems using mutual needs in classes
     // NOTE: should be inside the namespace owns
     class Alumno;
+    class Asignatura;
 
     class Curso : private AcademyBase
     {

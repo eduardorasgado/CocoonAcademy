@@ -4,6 +4,7 @@
 
 #include "Curso.h"
 #include "../Alumno/Alumno.h"
+#include "../Asignatura/Asignatura.h"
 
 namespace Models
 {
