@@ -57,6 +57,9 @@ namespace Testers
                 return alumnosList;
             }
 
+        private:
+            AlumnoTester() { }//made static
+
             static std::vector<std::string> createNames(int& quantity)
             {
                 std::string names[] = {"Eduardo", "Lorenzo", "Martin", "Joaquin", "Juan"};
@@ -94,14 +97,9 @@ namespace Testers
                 return begin + (std::rand()%(end-begin));
             }
 
-
-
             static void randomAlumnos(std::vector<std::shared_ptr<Alumno>>& alumnos)
             {
                 std::random_shuffle(alumnos.begin(), alumnos.end());
             }
-
-        private:
-            AlumnoTester() { }//made static
     };
 }
