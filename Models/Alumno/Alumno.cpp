@@ -3,6 +3,7 @@
 //
 
 #include "Alumno.h"
+#include "../Curso/Curso.h"
 
 namespace Models
 {
@@ -18,7 +19,7 @@ namespace Models
         return CursoId;
     }
 
-    std::shared_ptr<Curso> const &Alumno::getCurso() const {
+    std::shared_ptr<Curso> const & Alumno::getCurso() const {
         return CursoOwner;
     }
 
@@ -31,6 +32,7 @@ namespace Models
     }
 
     void Alumno::setCurso(std::shared_ptr<Curso> CursoOwner) {
+        this->CursoOwner = nullptr;
         this->CursoOwner = CursoOwner;
     }
 }

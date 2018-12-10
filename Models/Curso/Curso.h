@@ -13,16 +13,26 @@
 #include "../TiposJornadas.h"
 #include "../Asignatura/Asignatura.h"
 
+
+
 namespace Models
 {
+    // to avoid problems using mutual needs in classes
+    // NOTE: should be inside the namespace owns
+    class Alumno;
+
     class Curso : private AcademyBase
     {
             // Name and Id are in parent class
             std::string Address;
-            std::shared_ptr<Academy> AcademyOwner;
             int AcademyId;
+            // course is owned by
+            std::shared_ptr<Academy> AcademyOwner;
+
             TiposJornadas Jornada;
+            // course have:
             std::vector<std::shared_ptr<Asignatura>> Asignaturas;
+            std::vector<std::shared_ptr<Alumno>> Alumnos;
 
 
         public:
@@ -40,12 +50,14 @@ namespace Models
             int const & getAcademyId() const;
             TiposJornadas const & getJornada() const;
             std::vector<std::shared_ptr<Asignatura>> const & getAsignaturas() const;
+            std::vector<std::shared_ptr<Alumno>> const & getAlumnos() const;
 
             void setName(std::string);
             void setAddress(std::string);
             void setAcademy(std::shared_ptr<Academy>);
             void setAcademyId(int);
             void setJornada(TiposJornadas);
-            void setAsignaturas(std::shared_ptr<Asignatura>);
+            void setAsignatura(std::shared_ptr<Asignatura>);
+            void setAlumno(std::shared_ptr<Alumno>);
     };
 }

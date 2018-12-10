@@ -4,16 +4,19 @@
 #pragma once
 
 #include "../AcademyBase/AcademyBase.h"
-#include "../Curso/Curso.h"
 #include <memory>
 
 namespace Models
 {
+    // to avoid problems using circular dependency
+// between two classes(mutual needs)
+    class Curso;
+
     class Alumno : private AcademyBase
     {
         private:
             int CursoId;
-            std::shared_ptr<Curso> CursoOwner;
+            std::shared_ptr<class Curso> CursoOwner;
         public:
             Alumno(std::string Name) : AcademyBase()
             {
@@ -24,10 +27,10 @@ namespace Models
             int const & getId() const;
             std::string const & getName();
             int const & getCursoId() const;
-            std::shared_ptr<Curso> const & getCurso() const;
+            std::shared_ptr< class Curso> const & getCurso() const;
 
             void setName(std::string);
             void setCursoId(int);
-            void setCurso(std::shared_ptr<Curso>);
+            void setCurso(std::shared_ptr< class Curso>);
     };
 }

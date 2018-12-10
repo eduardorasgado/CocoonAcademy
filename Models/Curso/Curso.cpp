@@ -3,6 +3,7 @@
 //
 
 #include "Curso.h"
+#include "../Alumno/Alumno.h"
 
 namespace Models
 {
@@ -39,6 +40,11 @@ namespace Models
         return Asignaturas;
     }
 
+    std::vector<std::shared_ptr<Alumno>> const & Curso::getAlumnos() const
+    {
+        return Alumnos;
+    }
+
     void Curso::setAddress(std::string Address) {
         this->Address = Address;
     }
@@ -61,8 +67,13 @@ namespace Models
         this->Jornada = Jornada;
     }
 
-    void Curso::setAsignaturas(std::shared_ptr<Models::Asignatura> a)
+    void Curso::setAsignatura(std::shared_ptr<Models::Asignatura> a)
     {
         Asignaturas.push_back(a);
+    }
+
+    void Curso::setAlumno(std::shared_ptr<Alumno> alumno)
+    {
+        Alumnos.push_back(alumno);
     }
 }

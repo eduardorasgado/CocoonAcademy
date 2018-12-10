@@ -60,7 +60,7 @@ namespace Testers
                     auto asignaturas = Testers::AsignaturaTester::createAsignaturasVector();
                     for(auto& a : asignaturas)
                     {
-                        c->setAsignaturas(a);
+                        c->setAsignatura(a);
                     }
 
                     cursosTest.push_back(c);
