@@ -8,6 +8,7 @@
 #include "Models/AcademyBase/AcademyBase.h"
 #include "Models/Curso/Curso.h"
 #include "Models/Asignatura/Asignatura.h"
+#include "Models/Alumno/Alumno.h"
 
 #include "Testers/executeTesting.h"
 

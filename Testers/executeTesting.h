@@ -5,6 +5,7 @@
 #include "Models/AcademyModelTester.h"
 #include "Models/CursoTester.h"
 #include "Models/AsignaturaTester.h"
+#include "Models/AlumnoTester.h"
 
 namespace Testers
 {
