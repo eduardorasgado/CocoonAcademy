@@ -4,6 +4,8 @@
 #include <vector>
 #include <memory>
 
+#include "Utilities/RandomFloatGenerator/RandomFloatGenerator.h"
+
 #include "Models/Academy/Academy.h"
 #include "Models/AcademyBase/AcademyBase.h"
 #include "Models/Curso/Curso.h"
@@ -23,6 +25,8 @@ int main()
 {
     // applying testing for all models created
     Testers::GlobalTester::GlobalModelTesting();
+    // applying testing for utilities
+    Testers::GlobalTester::UtilsTesting();
 
 
     return 0;

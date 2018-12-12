@@ -4,6 +4,10 @@
 
 #pragma once
 
+
+#include <random> // used in get_random
+#include <bits/stdc++.h> // setprecision
+
 namespace Testers
 {
     class EvaluacionTester
@@ -18,7 +22,7 @@ namespace Testers
                     auto evaluaciones = createEvalVector();
                     for(auto& eval : evaluaciones)
                     {
-                        std::cout << eval->getName() << ", Nota: " << eval->getNota() << std::endl;
+                        std::cout << eval->getName() << ", Nota: " << eval->getNota() << std::setprecision(2) << std::endl;
                     }
 
                 } catch(std::exception& e)
@@ -46,10 +50,12 @@ namespace Testers
 
             static void addNota(std::shared_ptr<Evaluacion> eval)
             {
-                eval->setNota(9.2);
+                auto note = 9.0;
+                eval->setNota(note);
             }
 
         private:
             EvaluacionTester() { } // made static
+
     };
 }
