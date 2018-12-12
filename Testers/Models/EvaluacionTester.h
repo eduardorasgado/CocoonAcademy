@@ -8,6 +8,10 @@
 #include <random> // used in get_random
 #include <bits/stdc++.h> // setprecision
 
+// not neccessary to include, because it is included using namespace
+// and backwards link from main.cpp->executeTesting.h->...
+//#include "../../Utilities/RandomFloatGenerator/RandomFloatGenerator.h"
+
 namespace Testers
 {
     class EvaluacionTester
@@ -18,7 +22,6 @@ namespace Testers
                 std::cout << "[EVALUACION MODEL TEST]" << std::endl;
                 try
                 {
-                    // TODO: Testing Logic
                     auto evaluaciones = createEvalVector();
                     for(auto& eval : evaluaciones)
                     {
@@ -39,10 +42,12 @@ namespace Testers
                 // creating a vector of evals with names
                 auto evaluaciones = std::vector<std::shared_ptr<Evaluacion>>();
                 for (int i = 0; i < 30; ++i) {
-                    auto s = std::to_string(i);
+                    auto s = std::to_string(i+1);
                     auto unidad = "Unidad " + s;
                     auto eval = std::make_shared<Evaluacion>(unidad);
+
                     addNota(eval);
+
                     evaluaciones.push_back(eval);
                 }
                 return evaluaciones;
@@ -50,7 +55,8 @@ namespace Testers
 
             static void addNota(std::shared_ptr<Evaluacion> eval)
             {
-                auto note = 9.0;
+                AcademyUtils::RandomFloatGenerator randomizer;
+                auto note = randomizer.get_random(5, 10);
                 eval->setNota(note);
             }
 
