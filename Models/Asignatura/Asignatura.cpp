@@ -4,6 +4,7 @@
 
 #include "Asignatura.h"
 #include "../Curso/Curso.h"
+#include "../Evaluacion/Evaluacion.h"
 
 namespace Models
 {
@@ -24,6 +25,11 @@ namespace Models
         return CursoOwner;
     }
 
+    std::vector<std::shared_ptr<Evaluacion>> const & Asignatura::getEvaluaciones() const
+    {
+        return Evaluaciones;
+    }
+
     void Asignatura::setName(std::string Name) {
         AcademyBase::setName(Name);
     }
@@ -35,5 +41,10 @@ namespace Models
     void Asignatura::setCurso(std::shared_ptr<Models::Curso> CursoOwner) {
         this->CursoOwner = nullptr;
         this->CursoOwner = CursoOwner;
+    }
+
+    void Asignatura::setEvaluacion(std::shared_ptr<Models::Evaluacion> Evaluacion)
+    {
+        Evaluaciones.push_back(Evaluacion);
     }
 }
